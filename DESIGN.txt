@@ -1,0 +1,55 @@
+Project Proposal
+
+Problem statement:
+Many small classes and instructors need a lightweight tool to enter student marks, compute totals and averages, and quickly view grade distributions. Manual spreadsheets are error-prone.
+
+Objectives:
+- Provide a simple console application to store student records (ID, name, marks).
+- Compute total, average, and letter grade automatically.
+- Support add/view/search/update/delete, file save/load, and basic statistics.
+
+Target users:
+- Teachers, tutors, students learning C++.
+
+Expected outcomes:
+- A modular C++ program demonstrating control structures, functions, arrays, and file I/O.
+
+Main program flow (algorithm):
+- Start -> Load students.csv (if exists) -> Show menu -> Perform selected action -> Loop until Exit -> Save optional -> Exit
+
+Key function algorithms (brief):
+- addStudent(): prompt for ID, name and marks; validate inputs; compute statistics; append to array.
+- calculateStudentStats(): sum marks, compute average, assign letter grade.
+- saveToFile()/loadFromFile(): write/read CSV lines.
+
+Pseudocode (major functions):
+
+addStudent():
+  if storage full return
+  read id; if id exists return
+  read name; for i in subjects read mark
+  calculateStudentStats(student)
+  append student
+
+calculateStudentStats(student):
+  total = sum(marks)
+  average = total / NUM_SUBJECTS
+  grade = computeGrade(average)
+
+computeGrade(avg):
+  if avg >=90 return 'A' ... else 'F'
+
+System design - Menu structure:
+- 1 Add 2 Display 3 Search 4 Update 5 Delete 6 Save 7 Load 8 Stats 9 Exit
+
+Data structures:
+- Student struct: id (int), name (string), marks[5] (int array), total (int), average (double), grade (char)
+- students[]: fixed-size array of Student (MAX_STUDENTS)
+
+Function breakdown:
+- inputInt(prompt,min,max): validated integer input
+- inputLineNonEmpty(prompt): validated non-empty line
+- computeGrade(avg): returns letter grade
+- calculateStudentStats(student): updates total/avg/grade
+- addStudent(), displayAllStudents(), displayStudent(), searchStudent(), updateStudent(), deleteStudent()
+- saveToFile(), loadFromFile(), showStatistics(), showMenu()

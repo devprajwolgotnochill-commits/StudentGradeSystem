@@ -1,0 +1,17 @@
+Test Cases - Student Grade Management System
+
+1) Add student valid
+Input: ID=201, Name=Alice, marks 80 85 90 75 95
+Expected: Student added; average 85; grade B
+
+2) Invalid mark
+Input: when entering mark enter 120
+Expected: prompt error and re-request between 0-100
+
+3) Duplicate ID
+Input: Add a student with existing ID
+Expected: Reject add with message
+
+4) Save & Load
+Action: Add a student, Save to file, restart program, Load from file
+Expected: Student present after load

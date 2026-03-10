@@ -1,0 +1,32 @@
+Student Grade Management System - User Manual
+
+Overview:
+This console program manages student records (ID, name, marks for 5 subjects), computes totals, averages, and assigns letter grades.
+
+How to run:
+1. Compile with a C++ compiler (example below).
+   g++ -std=c++17 main.cpp -o grade.exe
+2. Run the executable.
+   ./grade.exe
+
+Menu Options:
+1 - Add Student: enter ID, name, then five marks (0-100).
+2 - Display All Students: shows table with marks, total, average, grade.
+3 - Search Student by ID: view a student's record.
+4 - Update Student: change name and/or marks (-1 to keep a mark).
+5 - Delete Student: remove a student by ID.
+6 - Save to File: writes current records to `students.csv`.
+7 - Load from File: reads `students.csv` (simple CSV, no commas in names).
+8 - Statistics: shows average of averages and grade distribution.
+9 - Exit: exits the program.
+
+Input validation:
+- IDs must be positive integers.
+- Marks must be integers between 0 and 100.
+
+Data file format:
+CSV header: id,name,m1,m2,m3,m4,m5,total,average,grade
+
+Limitations:
+- Names cannot include commas (CSV is simple).
+- Max students: 200 (adjustable in source).
