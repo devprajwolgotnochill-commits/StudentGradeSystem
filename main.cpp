@@ -37,7 +37,7 @@ const int NUM_SUBJECTS = 6;
 // Student structure
 // Stores all data related to one student
 // ----------------------------------------------------------
-struct Student {
+struct Student { //default :public
     int id;                     // unique student ID
     string name;                // student name
     int marks[NUM_SUBJECTS];    // marks for each subject
